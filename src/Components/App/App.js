@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { render } from '@testing-library/react';
+import  SearchBar  from '../SearchBar/SearchBar';
 
 function App() {
 render() 
