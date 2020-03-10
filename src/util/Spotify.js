@@ -14,7 +14,7 @@ const Spotify = {
 
     if (accessTokenMatch && expiresInMatch) {
       accessToken = accessTokenMatch[1];
-      const expiresIn = number(expiresInMatch[1]);
+      const expiresIn = Number(expiresInMatch[1]);
       // This clears the parameters allowing us to grab a new access token when it expires
       window.setTimeout(() => accessToken = '', expiresIn * 1000);
       window.history.pushState('Access Token', null, '/');
@@ -41,7 +41,7 @@ const Spotify = {
         return jsonResponse.tracks.items.map(track => ({
           id: track.id,
           name: track.name,
-          artist: track.artist[0].name,
+          artist: track.artists[0].name,
           album: track.album.name,
           uri: track.uri
         }));
